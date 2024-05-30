@@ -12,6 +12,6 @@ const Document: React.FC = () => {
   )
 }
 
-Document.displayName = 'DisplayName'
+Document.displayName = 'Document'
 
 export default Document

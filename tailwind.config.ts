@@ -13,11 +13,6 @@ const config: Config = {
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
         'playfair-display': ['var(--font-playfair-display)'],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       colors: {
         'brand-primary': '#161616',
         'brand-secondary': '#FFFFFF',
