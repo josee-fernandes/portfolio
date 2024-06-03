@@ -18,6 +18,9 @@ const config: Config = {
         'brand-secondary': '#FFFFFF',
         'brand-accent': '#EFBE74',
       },
+      animation: {
+        spin: 'spin 7s linear infinite',
+      },
     },
   },
   plugins: [],

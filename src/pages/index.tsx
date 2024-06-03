@@ -1,6 +1,10 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
+import Image from 'next/image'
+import sparkle from 'public/sparkle.svg'
+
+import { Footer } from '@/components/Footer'
+import { Nav } from '@/components/Nav'
 
 const Home: NextPage = () => {
   return (
@@ -8,24 +12,17 @@ const Home: NextPage = () => {
       <Head>
         <title>José Fernandes</title>
       </Head>
-      <div className="mx-auto flex h-screen w-[90%] max-w-[1600px] flex-col items-center justify-center lg:items-start">
-        <h1 className="text-center font-humane text-8xl font-bold leading-none text-white md:text-[28vw] lg:text-left lg:text-[18rem]">
-          JOSÉ FERNANDES
-        </h1>
-        <p className="text-center text-xs text-white md:text-[1.8vw] lg:text-left lg:text-base">
-          THIS PORTFOLIO IS UNDER CONSTRUCTION 🛠️
-        </p>
-        <p className="text-center text-xs text-white md:text-[1.8vw] lg:text-left lg:text-base">
-          MEANWHILE, YOU CAN CHECK MY{' '}
-          <Link
-            href="https://github.com/josee-fernandes"
-            rel="noopener"
-            className="underline"
-          >
-            GITHUB
-          </Link>
-          .
-        </p>
+      <div className="relative h-screen w-screen flex-col">
+        <Nav />
+        <div className="relative top-1/2 mx-auto flex w-[95%] max-w-[1600px] flex-1 -translate-y-1/2 flex-col items-center justify-center lg:items-start">
+          <h1 className="text-center font-humane text-8xl font-bold leading-none text-white md:text-[28vw] lg:text-left lg:text-[18rem]">
+            JOSÉ FERNANDES
+          </h1>
+          <div className="absolute right-56 top-1/2 -translate-y-1/2">
+            <Image src={sparkle} alt="" className="motion-safe:animate-spin" />
+          </div>
+        </div>
+        <Footer />
       </div>
     </>
   )

@@ -21,6 +21,18 @@ body {
   display: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  @apply !leading-none;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -29,6 +41,11 @@ h5::selection,
 h6::selection,
 p::selection,
 span::selection,
-a::selection {
+a::selection,
+img::selection {
   @apply bg-brand-accent;
+}
+
+img {
+  @apply select-none;
 }
