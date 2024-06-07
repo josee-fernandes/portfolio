@@ -7,6 +7,8 @@ import {
 } from 'next/font/google'
 import localFont from 'next/font/local'
 
+import { Transition } from '@/components/Transition'
+import { TransitionProvider } from '@/context/Transition'
 import { useIsomorphicLayoutEffect } from '@/hooks'
 
 const humane = localFont({
@@ -35,12 +37,22 @@ const playfairDisplay = PlayfairDisplay({
   variable: '--font-playfair-display',
 })
 
-const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const App: React.FC<AppProps> = ({
+  Component,
+  pageProps,
+  router,
+}: AppProps) => {
   useIsomorphicLayoutEffect(() => {
     document.body.className = `min-h-screen w-full overflow-x-hidden bg-brand-primary font-montserrat ${humane.variable} ${montserrat.variable} ${playfairDisplay.variable}`
   }, [])
 
-  return <Component {...pageProps} />
+  return (
+    <TransitionProvider>
+      <Transition>
+        <Component key={router.route} {...pageProps} />
+      </Transition>
+    </TransitionProvider>
+  )
 }
 
 App.displayName = 'App'
